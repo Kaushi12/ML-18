@@ -1,0 +1,52 @@
+1) In supervised learning, the algorithm “learns” from the training dataset by iteratively making predictions on the data and adjusting for the correct answer. While supervised learning models tend to be more accurate than unsupervised learning models, they require upfront human intervention to label the data appropriately. For example, a supervised learning model can predict how long your commute will be based on the time of day, weather conditions and so on. But first, you’ll have to train it to know that rainy weather extends the driving time.
+
+Unsupervised learning models, in contrast, work on their own to discover the inherent structure of unlabeled data. Note that they still require some human intervention for validating output variables. For example, an unsupervised learning model can identify that online shoppers often purchase groups of products at the same time. However, a data analyst would need to validate that it makes sense for a recommendation engine to group baby clothes with an order of diapers, applesauce and sippy cups.
+
+2)Unsupervised learning finds a myriad of real-life applications, including:
+
+data exploration,
+customer segmentation,
+recommender systems,
+target marketing campaigns, and
+data preparation and visualization, etc.
+
+3)1. K-Means clustering
+K-Means is a partition-based clustering technique that uses the distance between the Euclidean distances between the points as a criterion for cluster formation. Assuming there are ‘n’ numbers of data objects, K-Means groups them into a predetermined ‘k’ number of clusters.
+
+Each cluster has a cluster center allocated and each of them is placed at farther distances. Every incoming data point gets placed in the cluster with the closest cluster center. This process is repeated until all the data points get assigned to any cluster. Once all the data points are covered the cluster centers or centroids are recalculated.
+
+After having these ‘k’ new centroids, a new grouping is done between the nearest new centroid and the same data set points. Iteratively, there may be a change in the k centroid values and their location this loop continues until the cluster centers do not change or in other words, centroids do not move anymore. The algorithm aims to minimize the objective function
+The correct value of K can be chosen using the Silhouette method and Elbow method. The Silhouette method calculates the distance using the mean intra-cluster distance along with an average of the closest cluster distance for each data point. While the Elbow method uses the sum of squared data points and computes the average distance.
+
+Implementation: K-Means clustering algorithm
+
+        Select ‘k’ number of clusters and centroids for each cluster.
+        Shuffle the data points in the dataset and initialize the selected centroid.
+        Assign the clusters to the data points without replacement.
+        Create new centroids by calculating the mean value of the samples.
+        Reinitialize the cluster centers until there is no change in the clusters.
+ii)DBSCAN
+DBSCAN – Density-Based Spatial Clustering of Applications with Noise identifies discrete groups in data. The algorithm aims to cluster the data as contiguous regions having high point density. Each cluster is separated from the others by points of low density. In simpler words, the cluster covers the data points that fit the density criteria which is the minimum number of data objects in a given radius.
+
+Terms used in DBSCAN:
+
+        Core: Point having least points within the distance from itself
+        Border: Point having at least one core point from a given distance.
+        Noise: Having less than m points within a given distance. This point is neither the core nor the border.
+        minPts: A threshold value of a minimum number of points that considers the cluster to be dense.
+        eps ε: The distance measure used to put the points in the region of any other data point.
+        Reachability: Density distribution identifying whether a point is reachable from other points if it lies at a distance eps from it.
+        Connectivity: Transitivity-based chaining approach that establishes the location of any point in a specified cluster.
+For implementing DBSCAN, we first begin with defining two important parameters – a radius parameter eps (ϵ) and a minimum number of points within the radius (m).
+The algorithm starts with a random data point that has not been accessed before and its neighborhood is marked according to ϵ.
+If this contains all the m minimum points, then cluster formation begins – hence marking it as “visited” – if not, then it is labeled as “noise” for that iteration, which can get changed later.
+iii) Gaussian Mixture Model
+The gaussian mixture model (GMM) is a distribution-based clustering technique. It is based on the assumption that the data comprises Gaussian distributions. It is a statistical inference clustering technique. The probability of a point being a part of a cluster is inversely dependent on distance, as the distance from distribution increases, the probability of a point belonging to the cluster decreases. The GM model trains the dataset and assumes a cluster for every object in the dataset. Later, a scatter plot is created with data points with different colors assigned to each cluster.
+
+GMM determines probabilities and allocates them to data points in the ‘K’ number of clusters. Each of which has three parameters: Mean, Covariance and mixing probability. To compute these parameters GMM uses the Expectation Maximization technique.
+
+4)K-means is a must-have in your data science toolkit, and there are several reasons for this. First of all it’s easy to implement and brings an efficient performance. After all, you need to define just one parameter (the value of K) to see the results. It is also fast and works really well with large datasets, making it capable of dealing with the current huge volumes of data. It’s so flexible that it can be used with pretty much any datatype and its results are easy to interpret and more explainable than other algorithms. Furthermore, the algorithm is so popular that you may find use cases and implementations in almost any discipline.
+
+5)K-means attempts to minimize the total squared error, while k-medoids minimizes the sum of dissimilarities between points labeled to be in a cluster and a point designated as the center of that cluster. In contrast to the k -means algorithm, k -medoids chooses datapoints as centers ( medoids or exemplars).
+
+6)The sole concept of hierarchical clustering lies in just the construction and analysis of a dendrogram. A dendrogram is a tree-like structure that explains the relationship between all the data points in the system.
